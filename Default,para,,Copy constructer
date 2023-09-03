@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+class HumanBeing{
+public:
+	string name;
+	int age;
+	HumanBeing(){  // Default constructor without any arguments
+		name="Unknown";
+		age=0;
+		cout<<name<<" "<<age<<endl;
+	}
+	HumanBeing(string word, int val) //Parameterised constructor
+	{
+		name=word;
+		age=val;
+		//cout<<name<<" "<<age<<endl;
+	}
+	HumanBeing(string word){
+		name=word;
+		age=0;
+		cout<<name<<" "<<age<<endl;
+	}
+	HumanBeing(int val){
+		name="Unknown";
+		age=val;
+		//cout<<name<<" "<<age<<endl;
+	}
+	HumanBeing(HumanBeing &h) //Copy constructor
+	{
+		name=h.name;
+		age=h.age;
+	}
+	void display(){
+		cout<<name<<" "<<age<<endl;
+	}
+
+};
+int main(){
+	HumanBeing hu;
+	HumanBeing hu2("Mani");
+	HumanBeing hu3(34);
+	hu3.display();
+	HumanBeing ch("sarat",55); //copy constructor initializing
+	ch.display();
+	HumanBeing h(hu2); // copying from another object
+	h.display(); 
+}
