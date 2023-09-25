@@ -1,0 +1,10 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    string c;
+    cin>>c;
+    for(auto x:c) {
+        cout<<(char)tolower(x);
+    }
+    return 0;
+}
