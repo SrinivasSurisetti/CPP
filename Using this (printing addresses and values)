@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class MyClass {
+private:
+    int x, y;
+
+public:
+    // Setter function to set the values of x and y
+    void setValues(int valueX, int valueY) {
+        this->x = valueX;
+        this->y = valueY;
+    }
+
+    // Print the value and address of x
+    void printX() {
+        cout << "Value of x: " << this->x << ", Address of x: " << &this->x << endl;
+    }
+
+    // Print the value and address of y
+    void printY() {
+        cout << "Value of y: " << this->y << ", Address of y: " << &this->y << endl;
+    }
+};
+
+int main() {
+    MyClass obj;
+
+    // Setting values using the setValues function
+    obj.setValues(10, 20);
+
+    // Printing values and addresses
+    cout << "Printing values and addresses:" << endl;
+    obj.printX();
+    obj.printY();
+
+    return 0;
+}
