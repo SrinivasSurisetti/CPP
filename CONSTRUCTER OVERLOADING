@@ -1,0 +1,50 @@
+#include <iostream>  //cONSTRUCTER OVERLOADING
+using namespace std;
+
+class MyClass {
+private:
+    int x, y;
+
+public:
+    // Default constructor
+    MyClass() {
+        x = 0;
+        y = 0;
+    }
+
+    // Parameterized constructor with one parameter
+    MyClass(int value) {
+        x = value;
+        y = 0;
+    }
+
+    // Parameterized constructor with two parameters
+    MyClass(int value1, int value2) {
+        x = value1;
+        y = value2;
+    }
+
+    // Display the values of x and y
+    void display() {
+        cout << "x: " << x << ", y: " << y << endl;
+    }
+};
+
+int main() {
+    // Creating objects using different constructors
+    MyClass obj1;           // Default constructor
+    MyClass obj2(5);        // Parameterized constructor with one parameter
+    MyClass obj3(3, 7);      // Parameterized constructor with two parameters
+
+    // Displaying the values of objects
+    cout << "Object 1: ";
+    obj1.display();
+
+    cout << "Object 2: ";
+    obj2.display();
+
+    cout << "Object 3: ";
+    obj3.display();
+
+    return 0;
+}
