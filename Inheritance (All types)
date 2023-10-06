@@ -1,0 +1,128 @@
+#include <iostream>
+
+// Base class
+class Base {
+public:
+    void display() {
+        std::cout << "Base class\n";
+    }
+};
+
+// Single Inheritance
+class DerivedSingle : public Base {
+public:
+    void displayDerivedSingle() {
+        std::cout << "Derived from Single\n";
+    }
+};
+
+// Multiple Inheritance
+class DerivedMultipleA {
+public:
+    void displayDerivedMultipleA() {
+        std::cout << "Derived from Multiple A\n";
+    }
+};
+
+class DerivedMultipleB {
+public:
+    void displayDerivedMultipleB() {
+        std::cout << "Derived from Multiple B\n";
+    }
+};
+
+class DerivedMultiple : public DerivedMultipleA, public DerivedMultipleB {
+public:
+    void displayDerivedMultiple() {
+        std::cout << "Derived from Multiple\n";
+    }
+};
+
+// Multilevel Inheritance
+class DerivedLevel1 : public Base {
+public:
+    void displayDerivedLevel1() {
+        std::cout << "Derived Level 1\n";
+    }
+};
+
+class DerivedLevel2 : public DerivedLevel1 {
+public:
+    void displayDerivedLevel2() {
+        std::cout << "Derived Level 2\n";
+    }
+};
+
+// Hierarchical Inheritance
+class DerivedHierarchicalA : public Base {
+public:
+    void displayDerivedHierarchicalA() {
+        std::cout << "Derived Hierarchical A\n";
+    }
+};
+
+class DerivedHierarchicalB : public Base {
+public:
+    void displayDerivedHierarchicalB() {
+        std::cout << "Derived Hierarchical B\n";
+    }
+};
+
+// Hybrid Inheritance
+class DerivedHybridA : public DerivedHierarchicalA {
+public:
+    void displayDerivedHybridA() {
+        std::cout << "Derived from Hybrid A\n";
+    }
+};
+
+class DerivedHybridB : public DerivedHierarchicalB, public DerivedLevel2 {
+public:
+    void displayDerivedHybridB() {
+        std::cout << "Derived from Hybrid B\n";
+    }
+};
+
+class DerivedHybrid : public DerivedHybridA, public DerivedHybridB {
+public:
+    void displayDerivedHybrid() {
+        std::cout << "Derived from Hybrid\n";
+    }
+};
+
+int main() {
+    // Single Inheritance
+    DerivedSingle singleObj;
+    singleObj.display();
+    singleObj.displayDerivedSingle();
+
+    // Multiple Inheritance
+    DerivedMultiple multiObj;
+    multiObj.displayDerivedMultipleA();
+    multiObj.displayDerivedMultipleB();
+    multiObj.displayDerivedMultiple();
+
+    // Multilevel Inheritance
+    DerivedLevel2 level2Obj;
+    level2Obj.display();
+    level2Obj.displayDerivedLevel1();
+    level2Obj.displayDerivedLevel2();
+
+    // Hierarchical Inheritance
+    DerivedHierarchicalA hierAObj;
+    hierAObj.display();
+    hierAObj.displayDerivedHierarchicalA();
+
+    DerivedHierarchicalB hierBObj;
+    hierBObj.display();
+    hierBObj.displayDerivedHierarchicalB();
+
+    // Hybrid Inheritance
+    DerivedHybrid hybridObj;
+    hybridObj.display();
+    hybridObj.displayDerivedHybridA();
+    hybridObj.displayDerivedHybridB();
+    hybridObj.displayDerivedHybrid();
+
+    return 0;
+}
