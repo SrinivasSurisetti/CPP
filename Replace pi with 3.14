@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string replacePi(string input, int i = 0) {  
+    if (i >= input.length())
+        return input;
+
+       if (input[i] == 'p' && i + 1 < input.length() && input[i + 1] == 'i') {
+        input.replace(i, 2, "3.14");
+        return replacePi(input, i + 4);
+    } else {
+        return replacePi(input, i + 1);
+    }
+}
+
+int main() {
+    string input_string ;
+    cout << "Enter a string: ";
+    getline(cin, input_string);
+    string result = replacePi(input_string);
+    cout << result << endl;
+
+    return 0;
+}
