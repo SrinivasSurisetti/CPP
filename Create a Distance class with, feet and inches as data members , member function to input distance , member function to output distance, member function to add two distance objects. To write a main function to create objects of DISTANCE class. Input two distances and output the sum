@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+class DISTANCE {
+	public:
+		int feet,inches,total;
+		int input_dist(int val1,int val2) {
+			this->feet=val1;
+			this->inches=val2;
+			int inches_in_feet= val2/12;
+			return inches_in_feet;
+		}
+		void add(int feet,int inches_in_feet){
+			total=feet+inches_in_feet;
+		}
+		void output_dis(){
+			cout<<"Total sum is : "<<total<<" feets";
+		}
+};
+int main() {
+	DISTANCE d1;
+	d1.add(2,d1.input_dist(2,24));
+	d1.output_dis();
+}
