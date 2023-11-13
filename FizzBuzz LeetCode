@@ -1,0 +1,13 @@
+class Solution {
+public:
+    vector<string> fizzBuzz(int n) {
+        vector<string> fizzBuzz;
+        for(int j=1;j<=n;j++) {
+            if(j%3==0 and j%5==0) fizzBuzz.push_back("FizzBuzz");
+            else if(j%3==0) fizzBuzz.push_back("Fizz");
+            else if(j%5==0) fizzBuzz.push_back("Buzz");
+            else fizzBuzz.push_back(to_string(j));
+        }
+        return fizzBuzz;
+    }
+};
