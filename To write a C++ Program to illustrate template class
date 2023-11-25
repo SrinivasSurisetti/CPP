@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+template<class T>
+class Swapper
+{
+private:
+T x;
+T y;
+public:
+Swapper(T x, T y)
+{
+this->x = x;
+this->y = y;
+}
+void swap()
+{
+T temp = x;
+x = y;
+y = temp;
+}
+void display()
+{
+cout<<"After swap x = "<<x<<", y = "<<y<<endl;
+}
+};
+int main()
+{
+Swapper<int> s1(2, 4);
+s1.swap();
+s1.display();
+Swapper<double> s2(4.2, 6.9);
+s2.swap();
+s2.display();
+return 0;
+}
