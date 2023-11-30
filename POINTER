@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+ int num = 10;
+ int *ptr = &num; // Pointer initialized with address of num
+ cout << "Value of num: " << num << endl;
+ cout << "Address of num: " << &num << endl;
+ cout << "Value pointed by ptr: " << *ptr << endl;
+ cout << "Address stored in ptr: " << ptr << endl;
+ return 0;
+}
