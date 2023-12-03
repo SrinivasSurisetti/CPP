@@ -1,0 +1,17 @@
+#include <iostream>
+ #include <cstring>
+ using namespace std;
+ int main()
+ {
+char name1[10] = "aditya";
+char name2[10] = "college";
+char name3[10];
+int len;
+strcpy(name3, name1);
+cout << "string copy : " << name3 << endl;
+strcat(name1, name2);
+cout << "string concatenation: " << name1 << endl;
+len = strlen(name1);
+cout << "string length : " << len << endl;
+return 0;
+ }
