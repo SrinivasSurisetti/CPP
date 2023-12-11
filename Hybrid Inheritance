@@ -1,0 +1,50 @@
+#include <iostream>
+
+// Base class 1
+class A {
+public:
+    void displayA() {
+        std::cout << "Base Class A" << std::endl;
+    }
+};
+
+// Base class 2
+class B {
+public:
+    void displayB() {
+        std::cout << "Base Class B" << std::endl;
+    }
+};
+
+class C : virtual public A, public B {
+public:
+    void displayC() {
+        std::cout << "Class C --> Hierarchical Inheritance" << std::endl;
+    }
+};
+
+class D : virtual public A {
+public:
+    void displayD() {
+        std::cout << "Class D --> Single Inheritance" << std::endl;
+    }
+};  // Don't forget the semicolon here
+
+class E :  public D, public C {
+public:
+    void displayE() {
+        std::cout << "Class E --> Hybrid Inheritance" << std::endl;
+    }
+};
+
+int main() {
+    E obj;
+
+    // Accessing members from base classes
+    obj.displayA();
+    obj.displayB();
+    obj.displayC();
+    obj.displayD();
+    obj.displayE();
+    return 0;
+}
