@@ -1,0 +1,33 @@
+#include <iostream>
+
+class Base {
+public:
+    Base() {
+        std::cout << "Base class constructor" << std::endl;
+    }
+
+    virtual ~Base() {
+        std::cout << "Base class destructor" << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    Derived() {
+        std::cout << "Derived class constructor" << std::endl;
+    }
+
+    ~Derived() override {
+        std::cout << "Derived class destructor" << std::endl;
+    }
+};
+
+int main() {
+    // Creating a Derived object using a Base class pointer
+    Base* basePtr = new Derived;
+
+    // Deleting the object through the base class pointer
+    delete basePtr;
+
+    return 0;
+}
