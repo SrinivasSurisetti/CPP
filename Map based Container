@@ -1,0 +1,17 @@
+#include <iostream>
+#include <map>
+
+using namespace std;  // Bringing the entire std namespace into scope
+
+int main() {
+    map<string, int> myMap;
+    myMap["Alice"] = 25;
+    myMap["Bob"] = 30;
+    myMap["Charlie"] = 22;
+
+    for (const auto& pair : myMap) {
+        cout << pair.first << ": " << pair.second << endl;  // No need for std:: prefix
+    }
+
+    return 0;
+}
