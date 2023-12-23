@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+    std::vector<int> myVector = {1, 2, 3, 4, 5};
+
+    // Using range-based loop to traverse a vector
+    for (const auto& element : myVector) {
+        std::cout << element << " ";
+    }
+
+    return 0;
+}
