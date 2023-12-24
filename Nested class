@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+// Outer class definition
+class Outer {
+private:
+    int outerVar;
+
+public:
+    // Constructor for Outer class
+    Outer(int val) : outerVar(val) {}
+
+    // Nested class definition (Inner class)
+    class Inner {
+    public:
+        // Method in the Inner class to display the value from the Outer class
+        void display(Outer& obj) {
+            cout << "Value from Outer class: " << obj.outerVar << endl;
+        }
+    };
+};
+
+// Main function
+int main() {
+    // Creating an instance of the Outer class with value 42
+    Outer outerObj(42);
+
+    // Creating an instance of the Inner class
+    Outer::Inner innerObj;
+
+    // Accessing the display method of the Inner class, passing the Outer class object
+    innerObj.display(outerObj);
+
+    return 0;
+}
