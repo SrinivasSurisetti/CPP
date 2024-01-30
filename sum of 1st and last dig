@@ -1,0 +1,12 @@
+import java.util.*;
+  public class sr{
+    public static void main(String[] st){
+      Scanner s = new Scanner(System.in);
+      int n = s.nextInt();
+      int z = n%10;
+      while(n>=10){
+      n = n/10;
+      }
+      System.out.print(z+n);
+    }
+}
