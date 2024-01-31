@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	for(int j=0;j<t;j++){
+	    int n,k;
+	    cin>>n>>k;
+	    int ar[n];
+	    for(int j=0;j<n;j++){
+	        cin>>ar[j];
+	    }
+	    int min_ = INT_MAX;
+	    for(int i=0;i<n;i++){
+	        if(ar[i]<k) continue;
+	        int m = ar[i]%k;
+	        if(min_>m) min_ = m;
+	        }
+	    if(min_ == INT_MAX) cout<<-1<<endl;
+	    else cout<<min_<<endl;
+	}
+}
