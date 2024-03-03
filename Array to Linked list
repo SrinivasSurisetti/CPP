@@ -1,0 +1,58 @@
+#include <iostream>
+
+// Define a Node structure for the linked list
+struct Node {
+    int data;
+    Node* next;
+    
+    Node(int d) : data(d), next(nullptr) {}
+};
+
+// Define a LinkedList class
+class LinkedList {
+private:
+    Node* head;
+public:
+    LinkedList() : head(nullptr) {}
+    
+    // Function to insert a new node at the end of the list
+    void insert(int data) {
+        Node* newNode = new Node(data);
+        if (head == nullptr) {
+            head = newNode;
+        } else {
+            Node* temp = head;
+            while (temp->next != nullptr) {
+                temp = temp->next;
+            }
+            temp->next = newNode;
+        }
+    }
+    
+    // Function to display the linked list
+    void display() {
+        Node* temp = head;
+        while (temp != nullptr) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    
+    LinkedList list;
+    
+    // Insert elements from the array into the linked list
+    for (int i = 0; i < n; ++i) {
+        list.insert(arr[i]);
+    }
+    
+    // Display the linked list
+    list.display();
+    
+    return 0;
+}
